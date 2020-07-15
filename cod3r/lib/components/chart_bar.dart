@@ -1,12 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
 
 class ChartBar extends StatelessWidget {
   final String label;
   final double value;
   final double percentage;
 
-  const ChartBar({
+  ChartBar({
     this.label,
     this.value,
     this.percentage,
@@ -21,14 +20,10 @@ class ChartBar extends StatelessWidget {
             Container(
               height: constraints.maxHeight * 0.15,
               child: FittedBox(
-                child: Text(
-                  '${value.toStringAsFixed(2)}',
-                ),
+                child: Text('${value.toStringAsFixed(2)}'),
               ),
             ),
-            SizedBox(
-              height: constraints.maxHeight * 0.05,
-            ),
+            SizedBox(height: constraints.maxHeight * 0.05),
             Container(
               height: constraints.maxHeight * 0.6,
               width: 10,
@@ -37,12 +32,13 @@ class ChartBar extends StatelessWidget {
                 children: <Widget>[
                   Container(
                     decoration: BoxDecoration(
-                        border: Border.all(
-                          color: Colors.grey,
-                          width: 1.0,
-                        ),
-                        color: Color.fromRGBO(220, 220, 220, 1),
-                        borderRadius: BorderRadius.circular(5)),
+                      border: Border.all(
+                        color: Colors.grey,
+                        width: 1.0,
+                      ),
+                      color: Color.fromRGBO(220, 220, 220, 1),
+                      borderRadius: BorderRadius.circular(5),
+                    ),
                   ),
                   FractionallySizedBox(
                     heightFactor: percentage,
@@ -56,9 +52,7 @@ class ChartBar extends StatelessWidget {
                 ],
               ),
             ),
-            SizedBox(
-              height: constraints.maxHeight * 0.05,
-            ),
+            SizedBox(height: constraints.maxHeight * 0.05),
             Container(
               height: constraints.maxHeight * 0.15,
               child: FittedBox(
